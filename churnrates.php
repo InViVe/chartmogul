@@ -18,13 +18,7 @@ curl_setopt ($ch, CURLOPT_CAINFO, "C:/curl/cacert.pem");
 
 $out = curl_exec($ch);
 
-
-//var_dump(json_decode($out, true));
-
 $json = json_decode($out, true);
-
-//echo  $json['entries'][1]['mrr-churn'];
-
 
 for ($x = 0; $x < sizeof($json['entries']); $x++) {
 	$churns[$x][0] = $json['entries'][$x]['mrr-churn-rate']; 
@@ -35,17 +29,6 @@ for ($x = 0; $x < sizeof($json['entries']); $x++) {
 usort($churns, function($a, $b) {
     return   $b[0] - $a[0];
 });
-
-/*
-//HIGHEST CHURN RATE???
-$month = getdate(strtotime($churns[0][1]));
-print  "<br /><br />" . "The top three months with the biggest churn rates (in decreasing order) from " .$start_date ." to " .$end_date . " are: " ;
-print $month['month'] ."(". $churns[0][0] . "%), ";
-$month = getdate(strtotime($churns[1][1]));
-print $month['month'] ."(". $churns[1][0] . "%), ";
-$month = getdate(strtotime($churns[2][1]));
-print $month['month']  ."(". $churns[2][0] . "%)";*/
-
 
 print  "<br /><br />" . "The top three months with the biggest churn rates (in decreasing order) from " .$start_date ." to " .$end_date . " are: " ;
 $top_how_many = 3;
