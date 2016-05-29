@@ -13,9 +13,9 @@ curl_setopt($ch, CURLOPT_URL, $url);
 
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-//Your personal Account Token
+//Your personal Account Token - Please change it and enter your own!
 $token = '5b79e651dd7c6e3f79d66e93bc31e937';
-//Your personal (private) Secret Key 
+//Your personal (private) Secret Key - Please change it and enter your own!
 $password = '8d7a15e9b84b0497397716f8ba7ab927';
 //The ChartMogul API uses HTTP Basic Authentication using your Account Token and Secret Key as basic auth credentials.
 //You can find more info here: https://dev.chartmogul.com/docs/authentication and your personal credentials (after you sign in) here: https://app.chartmogul.com/#admin/api
